@@ -1,5 +1,6 @@
 import axios from "axios"
 import { useRouter } from "next/router"
+import PostLayout from "../../../layouts/PostLayout"
 
 // router is required for fallback: true
 const Article = ({ post }) => {
@@ -10,13 +11,8 @@ const Article = ({ post }) => {
     }
   
     return (
-      <div>
-      <h1>Post page</h1>
-      <h2>{post.attributes.title}</h2>
-      <p>{post.attributes.content}</p>
-      <p>{post.attributes.writer.data.attributes.name}</p>
-    </div>
-
+      <PostLayout>{post}</PostLayout>
+      
     )
   }
 
@@ -25,8 +21,6 @@ const Article = ({ post }) => {
   export async function getStaticProps({ params }) {
     const res = await axios.request(`http://127.0.0.1:1337/api/articles/?populate=*&?filters[slug]=${params.slug}`);
     const post = await res.data.data[0]
-
-
     return {
       props: {
         post,

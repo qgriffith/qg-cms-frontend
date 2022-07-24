@@ -30,9 +30,8 @@ import logo from '../public/logo.png'
                   <Link
                     key={link.title}
                     href={link.href}
-                    className="p-1 font-medium text-gray-900 dark:text-gray-100 sm:p-4"
-                  >
-                    {link.title}
+                    className="p-1 font-medium text-gray-900 dark:text-gray-100 sm:p-4">
+                    <a className="p-4">{link.title}</a>
                   </Link>
                 ))}
               </div>

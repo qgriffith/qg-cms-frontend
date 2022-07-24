@@ -1,10 +1,11 @@
 import Link from "next/link"
+import Image from "next/image"
 import Footer from "../components/Footer"
 import NavBar from "../components/NavBar"
 import SectionContainer from "../components/SectionContainer"
 import NavLinks from "../lib/NavLinks"
-import ThemeSwitch
- from "../components/ThemeSwitcher"
+import ThemeSwitch from "../components/ThemeSwitcher"
+import logo from '../public/logo.png'
 
  const Layout = ({ children }) => {
     return (
@@ -15,6 +16,7 @@ import ThemeSwitch
               <Link href="/" aria-label='qgriffith'>
                 <div className="flex items-center justify-between">
                   <div className="mr-3">
+                    <Image src={logo} width={50} height={50}/>
                   </div>
                  <div className="hidden h-6 text-2xl font-semibold sm:block">
                       "qgriffith"

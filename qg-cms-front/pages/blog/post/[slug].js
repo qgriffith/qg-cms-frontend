@@ -1,6 +1,7 @@
 import axios from "axios"
 import { useRouter } from "next/router"
 import PostLayout from "../../../layouts/PostLayout"
+import NavBar from "../../../components/NavBar"
 
 // router is required for fallback: true
 const Article = ({ post }) => {

@@ -31,7 +31,7 @@ const Article = ({ post }) => {
   }
 
   export async function getStaticPaths() {
-    const res = await axios.request("http://127.0.0.1:1337/api/articles")
+    const res = await axios.request(getStrapiURL("/api/articles"))
     const posts = await res.data
     const paths = posts.data.map((post) => ({ params: { slug: post.attributes.slug} }))
     return {

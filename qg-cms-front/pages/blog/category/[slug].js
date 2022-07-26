@@ -28,7 +28,7 @@ export async function getStaticProps({ params }) {
   }
 
   export async function getStaticPaths() {
-    const res = await axios.request("http://127.0.0.1:1337/api/categories")
+    const res = await axios.request(getStrapiURL("/api/categories"))
     const categories = await res.data
     const paths = categories.data.map((category) => ({ params: { slug: category.attributes.slug} }))
     return {

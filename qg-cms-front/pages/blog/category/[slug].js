@@ -1,4 +1,5 @@
 import axios from "axios"
+import getStrapiURL from "../../../lib/GetStrapiURL"
 import { useRouter } from "next/router"
 
 const Category = ({category}) => {
@@ -16,7 +17,7 @@ const Category = ({category}) => {
 }
 
 export async function getStaticProps({ params }) {
-    const res = await axios.request(`http://127.0.0.1:1337/api/categories/?populate=*&?filters[slug]=${params.slug}`);
+    const res = await axios.request(getStrapiURL(`/api/categories/?populate=*&?filters[slug]=${params.slug}`));
     const category = await res.data.data[0]
 
     return {

@@ -1,9 +1,12 @@
 import PageTitle from "../components/PageTitle"
+import SectionContainer from "../components/SectionContainer"
+import Image from "next/image"
 
 const postDateTemplate = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' }
 
 export default function PostLayout({ children }) {
     return (
+    <SectionContainer>
         <article>
              <div className="xl:divide-y xl:divide-gray-200 xl:dark:divide-gray-700">
                 <header className="pt-6 xl:pb-6">
@@ -28,9 +31,13 @@ export default function PostLayout({ children }) {
                 </div>
                 <ul className="flex justify-center space-x-8 sm:space-x-12 xl:block xl:space-x-0 xl:space-y-8">
                     <li>{children.attributes.writer.data.attributes.name}</li>
+                    <li className="flex items-center space-x-2" key={children.attributes.writer.data.attributes.name}>
+                       <Image src={children.attributes.writer.data.attributes.image.data.attributes.url} width={38} height={38}/>
+                    </li>
                 </ul>
              </div>
         </article>
+    </SectionContainer> 
     )
 }
 

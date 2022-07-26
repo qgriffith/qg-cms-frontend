@@ -1,16 +1,19 @@
 import axios from 'axios'
+import Link from 'next/link'
+import getStrapiURL from '../../lib/GetStrapiURL'
+
 function Blog({ posts }) {
     return (
       <ul>
         {posts.data.map((post) => (
-          <li>{post.attributes.title}</li>
+          <li><Link href={`/blog/post/${encodeURIComponent(post.attributes.slug)}`}>{post.attributes.title}</Link></li>
         ))}
       </ul>
     )
   }
 
 export async function getStaticProps() {
-    const res = await axios.request('http://127.0.0.1:1337/api/articles')
+    const res = await axios.request(getStrapiURL('/api/articles'))
     const posts = await res.data
     return {
         props: {

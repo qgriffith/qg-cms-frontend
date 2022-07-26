@@ -1,7 +1,7 @@
+import Image from 'next/image'
 import Mail from '../public/icons/mail.svg'
 import Github from '../public/icons//github.svg'
 import Linkedin from '../public/icons/linkedin.svg'
-
 
 // Icons taken from: https://simpleicons.org/
 

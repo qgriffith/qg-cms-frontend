@@ -1,6 +1,6 @@
 import PageTitle from "../components/PageTitle"
 import SectionContainer from "../components/SectionContainer"
-import Image from "next/image"
+import StapiImage from "../components/StrapiImage"
 
 const postDateTemplate = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' }
 
@@ -32,12 +32,11 @@ export default function PostLayout({ children }) {
                 <ul className="flex justify-center space-x-8 sm:space-x-12 xl:block xl:space-x-0 xl:space-y-8">
                     <li>{children.attributes.writer.data.attributes.name}</li>
                     <li className="flex items-center space-x-2" key={children.attributes.writer.data.attributes.name}>
-                       <Image src={children.attributes.writer.data.attributes.image.data.attributes.url} width={38} height={38}/>
+                    <StapiImage image={children.attributes.writer.data.attributes.image.data.attributes} width={38} height={38}/>
                     </li>
-                </ul>
+                </ul>                
              </div>
         </article>
     </SectionContainer> 
     )
 }
-

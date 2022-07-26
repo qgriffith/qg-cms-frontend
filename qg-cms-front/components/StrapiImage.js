@@ -1,13 +1,14 @@
 import Image from "next/image"
 import getStrapiMedia from "../lib/GetStrapiMedia"
 
-const StrapiImage = ({image, height, width}) => {
+const StrapiImage = ({image, style="", height, width}) => {
     return (
         <Image
         width={width || "100%"}
         height={height || "100%"}
         src={getStrapiMedia(image.url)}
-        alt={image.alternativeText}       
+        alt={image.alternativeText}
+        className={style}  
         />        
     )
 }

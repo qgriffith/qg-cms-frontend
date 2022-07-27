@@ -2,7 +2,7 @@ import axios from "axios"
 import { useRouter } from "next/router"
 import getStrapiURL from "../../../lib/GetStrapiURL"
 import PostLayout from "../../../layouts/PostLayout"
-import NavBar from "../../../components/NavBar"
+import qs from "qs"
 
 // router is required for fallback: true
 const Article = ({ post }) => {
@@ -21,6 +21,7 @@ const Article = ({ post }) => {
   export default Article
   
   export async function getStaticProps({ params }) {
+    
     const res = await axios.request(getStrapiURL(`/api/articles/?populate[writer][populate]=*&?filters[slug]=${params.slug}`));
     const post = await res.data.data[0]
     return {

@@ -3,6 +3,8 @@ import SectionContainer from "../components/SectionContainer"
 import StapiImage from "../components/StrapiImage"
 import ReactMarkdown from "react-markdown"
 import rehypePrism from 'rehype-prism-plus'
+import remarkGfm from 'remark-gfm'
+import Tags from "../components/Tags"
 
 const postDateTemplate = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' }
 
@@ -43,14 +45,14 @@ export default function PostLayout({ children }) {
                     </dl>
                     <div className="divide-gray-200 text-sm font-medium leading-5 dark:divide-gray-700 xl:col-start-1 xl:row-start-2 xl:divide-y">
                         <div className="py-4 xl:py-8">
-                            <h2 className="text-xs uppercase tracking-wide text-gray-500 dark:text-gray-400">Category</h2>
+                            <h2 className="text-xs uppercase tracking-wide text-gray-500 dark:text-gray-400">Tags</h2>
                             <div className="flex flex-wrap">
-                                {children.attributes.category}   
+                                <Tags id={children.id}/>
                             </div>
                         </div>
                     </div>
                     <div className="divide-y divide-gray-200 dark:divide-gray-700 xl:col-span-3 xl:row-span-2 xl:pb-0">
-                         <div className="prose max-w-none pt-10 pb-8 dark:prose-dark"><ReactMarkdown rehypePlugins={[rehypePrism]}>{children.attributes.content}</ReactMarkdown></div>                    
+                         <div className="prose max-w-none pt-10 pb-8 dark:prose-dark"><ReactMarkdown remarkPlugins={[remarkGfm]} rehypePlugins={[rehypePrism]}>{children.attributes.content}</ReactMarkdown></div>                    
                     </div>
                 </div>                
              </div>

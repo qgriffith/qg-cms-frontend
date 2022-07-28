@@ -1,6 +1,5 @@
-import axios from "axios"
 import Link from "next/link"
-import getStrapiURL from "../lib/GetStrapiURL"
+import { queryAPI } from "../lib/QueryAPI";
 import { useState, useEffect } from 'react'
 
 export default function Tags({id}) {
@@ -9,8 +8,12 @@ export default function Tags({id}) {
   
     useEffect(()=>{
       const fetchData = async () => {
-        const res = await axios.request(getStrapiURL(`/api/tags?filters[articles]=${id}`))
-        const {data} = await res.data
+        const res = await queryAPI("/tags", {
+          filters: {
+            articles: id
+          }
+        })
+        const {data} = await res
         setTags(data)
       }
       fetchData()

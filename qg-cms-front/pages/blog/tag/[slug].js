@@ -1,6 +1,5 @@
-import axios from "axios"
-import getStrapiURL from "../../../lib/GetStrapiURL"
 import { useRouter } from "next/router"
+import { queryAPI } from "../../../lib/QueryAPI"
 
 const Tag = ({tag}) => {
     const router = useRouter()
@@ -17,19 +16,21 @@ const Tag = ({tag}) => {
 }
 
 export async function getStaticProps({ params }) {
-    const res = await axios.request(getStrapiURL(`/api/tags/?populate=*&?filters[slug]=${params.slug}`));
-    const tag = await res.data.data[0]
-
+    const tag = await queryAPI("/tags", {
+      filters: {
+        slug: params.slug
+      },
+      populate: "*"
+    })
     return {
       props: {
-        tag,
+        tag: tag.data[0],
       },
     }
   }
 
   export async function getStaticPaths() {
-    const res = await axios.request(getStrapiURL("/api/tags"))
-    const tags = await res.data
+    const tags = await queryAPI("/tags")
     const paths = tags.data.map((tag) => ({ params: { slug: tag.attributes.slug} }))
     return {
       paths,

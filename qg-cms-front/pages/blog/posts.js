@@ -1,6 +1,5 @@
-import axios from 'axios'
 import Link from 'next/link'
-import getStrapiURL from '../../lib/GetStrapiURL'
+import { queryAPI } from '../../lib/QueryAPI'
 
 function Blog({ posts }) {
     return (
@@ -13,8 +12,7 @@ function Blog({ posts }) {
   }
 
 export async function getStaticProps() {
-    const res = await axios.request(getStrapiURL('/api/articles'))
-    const posts = await res.data
+    const posts = await queryAPI('/articles')
     return {
         props: {
             posts,

@@ -5,6 +5,7 @@ import ReactMarkdown from "react-markdown"
 import rehypePrism from 'rehype-prism-plus'
 import remarkGfm from 'remark-gfm'
 import Tags from "../components/Tags"
+import getStrapiMedia from "../lib/GetStrapiMedia"
 
 const postDateTemplate = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' }
 
@@ -52,7 +53,10 @@ export default function PostLayout({ children }) {
                         </div>
                     </div>
                     <div className="divide-y divide-gray-200 dark:divide-gray-700 xl:col-span-3 xl:row-span-2 xl:pb-0">
-                         <div className="prose max-w-none pt-10 pb-8 dark:prose-dark"><ReactMarkdown remarkPlugins={[remarkGfm]} rehypePlugins={[rehypePrism]}>{children.attributes.content}</ReactMarkdown></div>                    
+                         <div className="prose max-w-none pt-10 pb-8 dark:prose-dark"><ReactMarkdown children={children.attributes.content} transformImageUri={(src) => {                                
+                                return getStrapiMedia(src,)
+                         }}
+                            remarkPlugins={[remarkGfm]} rehypePlugins={[rehypePrism]}>{children.attributes.content}</ReactMarkdown></div>                    
                     </div>
                 </div>                
              </div>

@@ -12,12 +12,19 @@ export async function queryAPI(path, urlParamsObject = {}, options = {}) {
   
     // Trigger API call
     const response = await axios.request(requestUrl, options)
+    .catch(function(error) {
+      if (error.response) {
+        console.error(error.response.data);
+        console.error(error.response.status);
+        console.error(error.response.headers);
+      } else if (error.request) {
+        console.error(error.request);
+      } else {
+        console.error("Error", error.message);
+        throw new Error(`An error occured please try again`)
+      }      
+    })
 
-    // Handle response
-    if (response.statusText =! 'OK') {
-      console.error(response.statusText)
-      throw new Error(`An error occured please try again`)
-    }
     const data = await response.data
     return data
   }

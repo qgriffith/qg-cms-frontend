@@ -1,6 +1,4 @@
-import axios from "axios"
 import { useRouter } from "next/router"
-import getStrapiURL from "../../../lib/GetStrapiURL"
 import PostLayout from "../../../layouts/PostLayout"
 import { queryAPI } from "../../../lib/QueryAPI"
 

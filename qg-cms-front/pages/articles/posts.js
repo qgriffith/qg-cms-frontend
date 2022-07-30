@@ -1,13 +1,9 @@
-import Link from 'next/link'
 import { queryAPI } from '../../lib/QueryAPI'
+import PostLists from '../../layouts/PostList'
 
 function Articles({ posts }) {
     return (
-      <ul>
-        {posts.data.map((post) => (
-          <li><Link href={`/articles/post/${encodeURIComponent(post.attributes.slug)}`}>{post.attributes.title}</Link></li>
-        ))}
-      </ul>
+      <PostLists>{posts}</PostLists>
     )
   }
 

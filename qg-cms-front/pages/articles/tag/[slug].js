@@ -1,5 +1,6 @@
 import { useRouter } from "next/router"
 import { queryAPI } from "../../../lib/QueryAPI"
+import PostLists from "../../../layouts/PostList"
 
 const Tag = ({tag}) => {
     const router = useRouter()
@@ -7,11 +8,7 @@ const Tag = ({tag}) => {
         return <div>Loading...</div>
       }
     return (
-        <ul>
-        {tag.attributes.articles.data.map((post) => (
-          <li>{post.attributes.title}</li>
-        ))}
-      </ul>     
+      <PostLists title={`Articles for ${tag.attributes.name}`}>{tag.attributes.articles}</PostLists>
     )  
 }
 

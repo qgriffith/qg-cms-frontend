@@ -3,9 +3,10 @@ import SectionContainer from "../components/SectionContainer"
 import ReactMarkdown from "react-markdown"
 import remarkGfm from 'remark-gfm'
 
-export default function HomeLayout({ children }) {
+export default function HomeLayout({ children, posts }) {
     return (
         <SectionContainer>
+        <div class="bg-white dark:bg-slate-800 rounded-lg px-6 py-8 ring-1 ring-slate-900/5 shadow-xl">
             <article>
             <div>
                 <header>
@@ -21,9 +22,9 @@ export default function HomeLayout({ children }) {
                     </ReactMarkdown>
                 </div>
             </div>
-            </div>
-          
+        </div>          
             </article>
+        </div>
         </SectionContainer>
     )
 }

@@ -1,0 +1,12 @@
+services:
+- type: web
+  name: qg-cms-frontend 
+  env: node
+  plan: starter
+  buildCommand: cd qg-cms-front/ && npm run build 
+  startCommand: cd qg-cms-front/ && npm start
+  envVars:
+  - key: NODE_ENV
+    value: production
+  - key: STRAPI_API_URL
+    value: https://strapi-v5q5.onrender.com

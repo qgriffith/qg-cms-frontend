@@ -16,7 +16,7 @@ import ThemeSwitch from "../components/ThemeSwitcher"
               <Link href="/" aria-label='qgriffith'>
                 <div className="flex items-center justify-between">
                   <div className="mr-3">
-                    <Image src='https://res.cloudinary.com/qwoww/image/upload/v1659289117/small_logo_024b52a122.png' width={50} height={50}/>
+                    <Image src='https://res.cloudinary.com/qwoww/image/upload/v1659302626/small_logo_06c37ba3e3.png' width={50} height={50}/>
                   </div>
                  <div className="hidden h-6 text-2xl font-semibold sm:block">
                       QGRIFFITH

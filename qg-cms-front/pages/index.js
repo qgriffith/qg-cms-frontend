@@ -22,7 +22,6 @@ export async function getStaticProps() {
       pageSize: 2
     }
   })
-  console.log(posts)
   return {
       props: {
           home,

@@ -17,7 +17,7 @@ import GetStrapiMedia from "../lib/GetStrapiMedia"
               <Link href="/" aria-label='qgriffith'>
                 <div className="flex items-center justify-between">
                   <div className="mr-3">
-                    <Image src={GetStrapiMedia('/uploads/logo_a7f2569c2a.png')} width={50} height={50}/>
+                    <Image src='https://res.cloudinary.com/qwoww/image/upload/v1659289114/logo_024b52a122.png' width={50} height={50}/>
                   </div>
                  <div className="hidden h-6 text-2xl font-semibold sm:block">
                       QGRIFFITH

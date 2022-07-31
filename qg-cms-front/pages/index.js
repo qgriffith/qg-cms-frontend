@@ -19,7 +19,7 @@ export async function getStaticProps() {
       publishedAt: 'desc'
     },
     pagination: {
-      pageSize: 2
+      pageSize: 3
     }
   })
   return {

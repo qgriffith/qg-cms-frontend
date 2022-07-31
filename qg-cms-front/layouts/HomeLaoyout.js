@@ -2,14 +2,17 @@ import PageTitle from "../components/PageTitle"
 import SectionContainer from "../components/SectionContainer"
 import ReactMarkdown from "react-markdown"
 import remarkGfm from 'remark-gfm'
-import Running from '../public/icons/Running.svg'
+import Running from '../public/icons/running.svg'
 import Cloud from '../public/icons/cloud.svg'
 
 export default function HomeLayout({ children, posts }) {
     return (
         <SectionContainer>
-            <div className="flex flex-col bg-gradient-to-r from-red-500 to-orange-500 shadow-inner">
-               <Running className="fill-current text-gray-700 hover:text-blue-500 dark:text-gray-200 dark:hover:text-blue-400 items-center"/>
+            <div className="flex flex-col items-center bg-gradient-to-tr from-red-600 to-orange-400">
+             <div className="grid grid-cols-2 gap-2">
+               <div className="grid-cols-1"><Running className="fill-current text-gray-700 hover:text-blue-500 dark:text-gray-200 dark:hover:text-blue-400"/></div>
+               <div className="grid-cols-2"><Cloud className="fill-current text-gray-700 hover:text-blue-500 dark:text-gray-200 dark:hover:text-blue-400"/></div>
+               </div>                      
             </div>
         <div className="mt-10 bg-white dark:bg-slate-800 rounded-lg px-6 py-8 ring-1 ring-slate-900/5 shadow-xl">
             <article>

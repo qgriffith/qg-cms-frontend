@@ -1,7 +1,7 @@
 const NavLinks = [
     { href: '/', title: 'Home' },
     { href: '/articles/posts', title: 'Articles' },
-    { href: '#', title: 'Resume' },
+    { href: 'https://qgriffith.me/resume', title: 'Resume' },
     { href: '/about', title: 'About' },
   ]
   

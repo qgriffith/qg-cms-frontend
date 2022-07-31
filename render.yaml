@@ -10,3 +10,5 @@ services:
     value: production
   - key: STRAPI_API_URL
     value: https://strapi-v5q5.onrender.com
+  - key: NEXT_PUBLIC_STRAPI_API_URL
+    value: https://strapi-v5q5.onrender.com  

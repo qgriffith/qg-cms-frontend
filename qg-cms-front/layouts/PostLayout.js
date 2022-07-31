@@ -54,7 +54,7 @@ export default function PostLayout({ children }) {
                     </div>
                     <div className="divide-y divide-gray-200 dark:divide-gray-700 xl:col-span-3 xl:row-span-2 xl:pb-0">
                          <div className="prose max-w-none pt-10 pb-8 dark:prose-dark"><ReactMarkdown children={children.attributes.content} transformImageUri={(src) => {                                
-                                return getStrapiMedia(src,)
+                                return getStrapiMedia(src)
                          }}
                             remarkPlugins={[remarkGfm]} rehypePlugins={[rehypePrism]}>{children.attributes.content}</ReactMarkdown></div>                    
                     </div>

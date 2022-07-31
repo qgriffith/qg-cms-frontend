@@ -33,6 +33,7 @@ const Article = ({ post }) => {
       props: {
         post: post.data[0],
       },
+      revalidate: 500
     }
   }
 

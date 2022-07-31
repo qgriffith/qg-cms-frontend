@@ -5,7 +5,7 @@ import remarkGfm from 'remark-gfm'
 import Running from '../public/icons/running.svg'
 import Cloud from '../public/icons/cloud.svg'
 
-export default function HomeLayout({ children, posts }) {
+export default function HomeLayout({ children }) {
     return (
         <SectionContainer>
             <div className="flex flex-col items-center bg-gradient-to-tr from-red-600 to-orange-400">

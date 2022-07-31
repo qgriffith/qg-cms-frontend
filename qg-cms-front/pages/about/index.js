@@ -7,7 +7,7 @@ function About({ about }) {
     )
   }
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
     const about = await queryAPI('/about', {
         populate: "*"
     })

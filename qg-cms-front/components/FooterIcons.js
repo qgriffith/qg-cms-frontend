@@ -1,6 +1,7 @@
 import Mail from '../public/icons/mail.svg'
 import Github from '../public/icons//github.svg'
 import Linkedin from '../public/icons/linkedin.svg'
+import Strava from '../public/icons/strava.svg'
 
 // Icons taken from: https://simpleicons.org/
 
@@ -8,6 +9,7 @@ const components = {
   mail: Mail,
   github: Github,
   linkedin: Linkedin,
+  strava: Strava,
 }
 
 const FooterIcons = ({ kind, href, size = 8 }) => {

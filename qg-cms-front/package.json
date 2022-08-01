@@ -1,6 +1,6 @@
 {
   "name": "qg-cms-front",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -30,5 +30,8 @@
     "tailwindcss": "^3.1.6"
   },
   "devDependencies": {
+  },
+  "author": {
+    "name": "Quenten Griffith"
   }
 }

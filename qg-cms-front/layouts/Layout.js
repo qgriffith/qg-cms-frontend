@@ -7,7 +7,8 @@ import NavLinks from "../lib/NavLinks"
 import ThemeSwitch from "../components/ThemeSwitcher"
 
 
- const Layout = ({ children, global }) => {
+ const Layout = ({ children }) => {
+    global = children.props.global
     return (
       <SectionContainer>
         <div className="flex h-screen flex-col justify-between">

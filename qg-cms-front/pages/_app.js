@@ -1,15 +1,12 @@
 import '../styles/globals.css'
 import '../styles/prism.css'
 import { ThemeProvider } from 'next-themes'
-import App from "next/app"
-import Head from 'next/head'
 import Layout from '../layouts/Layout'
-import { queryAPI } from '../lib/QueryAPI'
-import { createContext } from "react"
+import Head from 'next/head'
 import getStrapiMedia from '../lib/GetStrapiMedia'
 
 function MyApp({ Component, pageProps }) {
-  const { global } = pageProps
+  const global = pageProps.global
   return (
     <ThemeProvider attribute="class" defaultTheme="system">
       <Head>
@@ -22,25 +19,14 @@ function MyApp({ Component, pageProps }) {
         <meta name="og:image" content={getStrapiMedia(global.attributes.siteLogo.data.attributes.url)} />
         <link rel="shortcut icon" href={getStrapiMedia(global.attributes.favicon.data.attributes.url)} />
       </Head>
-      <Layout global={global}>
+
+      <Layout>
         <Component {...pageProps} />
       </Layout>
     </ThemeProvider>
   )
   
 }
-
-MyApp.getInitialProps = async (ctx) => {
- // Calls page's `getInitialProps` and fills `appProps.pageProps`
-  const appProps = await App.getInitialProps(ctx)
-  // Fetch global site settings from Strapi
-  const global = await queryAPI('/global', {
-      populate: "*"
-    }
-  )
-  return { ...appProps, pageProps: { global: global.data } }
-}
-
 
 
 export default MyApp

@@ -8,6 +8,9 @@ function Articles({ posts }) {
   }
 
 export async function getStaticProps() {
+    const global = await queryAPI('/global', {
+      populate: "*"
+    })
     const posts = await queryAPI('/articles', {
       sort: {
         publishedAt: 'desc'
@@ -16,6 +19,7 @@ export async function getStaticProps() {
     return {
         props: {
             posts,
+            global: global.data
         },
         revalidate: 500
     }

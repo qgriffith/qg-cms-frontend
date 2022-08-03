@@ -9,7 +9,9 @@ export default function Home({home, posts}) {
 }
  
 export async function getStaticProps() {
-
+  const global = await queryAPI('/global', {
+    populate: "*"
+  })
   const home = await queryAPI('/homepage', {
     populate: "*"
   })
@@ -25,7 +27,8 @@ export async function getStaticProps() {
   return {
       props: {
           home,
-          posts,    
+          posts,
+          global: global.data
       },
       revalidate: 500
   }

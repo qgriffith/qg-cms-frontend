@@ -19,6 +19,9 @@ const Article = ({ post }) => {
   export default Article
   
   export async function getStaticProps({ params }) {
+    const global = await queryAPI('/global', {
+      populate: "*"
+    })
     const post = await queryAPI('/articles', {
       filters: {
         slug: params.slug
@@ -32,6 +35,7 @@ const Article = ({ post }) => {
     return {
       props: {
         post: post.data[0],
+        global: global.data
       },
       revalidate: 500
     }
@@ -42,6 +46,6 @@ const Article = ({ post }) => {
     const paths = posts.data.map((post) => ({ params: { slug: post.attributes.slug} }))
     return {
       paths,
-      fallback: true,
+      fallback: 'blocking',
     };
   };

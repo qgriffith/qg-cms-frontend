@@ -8,6 +8,7 @@ import ThemeSwitch from "../components/ThemeSwitcher"
 
 
  const Layout = ({ children }) => {
+    global = children.props.global
     return (
       <SectionContainer>
         <div className="flex h-screen flex-col justify-between">

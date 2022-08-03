@@ -13,6 +13,9 @@ const Tag = ({tag}) => {
 }
 
 export async function getStaticProps({ params }) {
+    const global = await queryAPI('/global', {
+      populate: "*"
+    })
     const tag = await queryAPI("/tags", {
       filters: {
         slug: params.slug
@@ -22,6 +25,7 @@ export async function getStaticProps({ params }) {
     return {
       props: {
         tag: tag.data[0],
+        global: global.data
       },
       revalidate: 500
     }
@@ -32,7 +36,7 @@ export async function getStaticProps({ params }) {
     const paths = tags.data.map((tag) => ({ params: { slug: tag.attributes.slug} }))
     return {
       paths,
-      fallback: true,
+      fallback: 'blocking',
     }
   }  
 

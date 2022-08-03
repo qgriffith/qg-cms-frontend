@@ -17,9 +17,8 @@ export async function getStaticProps({ params }) {
       filters: {
         slug: params.slug
       },
-      populate: "*",      
-    },
-    )
+      populate: "*"
+    })
     return {
       props: {
         tag: tag.data[0],

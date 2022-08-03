@@ -8,11 +8,7 @@ function Articles({ posts }) {
   }
 
 export async function getStaticProps() {
-    const posts = await queryAPI('/articles', {
-      sort: {
-        publishedAt: 'desc'
-      },
-    })
+    const posts = await queryAPI('/articles')
     return {
         props: {
             posts,

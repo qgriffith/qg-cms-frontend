@@ -1,5 +1,5 @@
 import Link from "next/link"
-import StrapiImage from '../components/StrapiImage'
+import Image from "next/image"
 import Footer from "../components/Footer"
 import NavBar from "../components/NavBar"
 import SectionContainer from "../components/SectionContainer"
@@ -17,10 +17,10 @@ import ThemeSwitch from "../components/ThemeSwitcher"
               <Link href="/" aria-label='qgriffith'>
                 <div className="flex items-center justify-between">
                   <div className="mr-3">
-                    <StrapiImage image={global.attributes.siteLogo.data.attributes} width={75} height={75}/>
+                    <Image src='https://res.cloudinary.com/qwoww/image/upload/v1659302626/small_logo_06c37ba3e3.png' width={50} height={50}/>
                   </div>
                  <div className="hidden h-6 text-2xl font-semibold sm:block">
-                      {global.attributes.siteName}
+                      QGRIFFITH
                     </div>
                 </div>
               </Link>

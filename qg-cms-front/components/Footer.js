@@ -12,11 +12,9 @@ export default function Footer() {
           <FooterIcons kind="linkedin" href="https://www.linkedin.com/in/quenten-griffith-1682493/" size="6" />
           </div>
           <div className="mb-2 flex space-x-2 text-sm text-gray-500 dark:text-gray-400">
-            <div>qgriffith</div>
+            <div>{global.attributes.siteName}</div>
             <div>{` • `}</div>
             <div>{`© ${new Date().getFullYear()}`}</div>
-            <div>{` • `}</div>
-            <Link href="/">QGriffith</Link>
           </div>
         </div>
       </footer>

@@ -30,7 +30,7 @@ export default function PostLists({ children, title="All Articles" }) {
                                     </Link>
                                 </h3>
                                 <div className="flex flex-wrap">
-                                    <Tags id={post.id} />
+                                    <Tags tags={post.attributes.tags.data} />
                                 </div>
                             </div>
                             <div className="prose max-w-none text-gray-500 dark:text-gray-400">

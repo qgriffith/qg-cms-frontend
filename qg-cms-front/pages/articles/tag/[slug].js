@@ -20,7 +20,12 @@ export async function getStaticProps({ params }) {
       filters: {
         slug: params.slug
       },
-      populate: "*"
+      populate: {
+        tags: "*",
+        articles: {
+          populate: 'tags'
+        }
+      }
     })
     return {
       props: {

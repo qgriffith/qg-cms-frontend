@@ -22,7 +22,8 @@ export async function getStaticProps() {
     },
     pagination: {
       pageSize: 3
-    }
+    },
+    populate: 'tags'
   })
   return {
       props: {

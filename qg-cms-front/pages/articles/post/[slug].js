@@ -27,6 +27,7 @@ const Article = ({ post }) => {
         slug: params.slug
       },
       populate: {
+        tags: "*",
         writer: {
           populate: "*",
         },

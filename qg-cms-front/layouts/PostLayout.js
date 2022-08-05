@@ -48,7 +48,7 @@ export default function PostLayout({ children }) {
                         <div className="py-4 xl:py-8">
                             <h2 className="text-xs uppercase tracking-wide text-gray-500 dark:text-gray-400">Tags</h2>
                             <div className="flex flex-wrap">
-                                <Tags id={children.id}/>
+                                <Tags tags={children.attributes.tags.data}/>
                             </div>
                         </div>
                     </div>

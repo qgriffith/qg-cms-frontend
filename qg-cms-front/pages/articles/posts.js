@@ -12,6 +12,9 @@ export async function getStaticProps() {
       populate: "*"
     })
     const posts = await queryAPI('/articles', {
+      populate: {
+        tags: "*"
+      },
       sort: {
         publishedAt: 'desc'
       },

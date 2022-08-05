@@ -14,7 +14,7 @@ import ThemeSwitch from "../components/ThemeSwitcher"
         <div className="flex h-screen flex-col justify-between">
           <header className="flex items-center justify-between py-10">
             <div>
-              <Link href="/" aria-label='qgriffith'>
+              <Link href="/" aria-label={global.attributes.siteName}>
                 <div className="flex items-center justify-between">
                   <div className="mr-3">
                     <StrapiImage image={global.attributes.siteLogo.data.attributes} width={75} height={75}/>

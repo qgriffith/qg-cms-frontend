@@ -8,13 +8,13 @@ import Cloud from '../public/icons/cloud.svg'
 export default function HomeLayout({ children }) {
     return (
         <SectionContainer>
-            <div className="flex flex-col items-center bg-gradient-to-tr from-red-600 to-orange-400">
+            <div className="flex flex-col items-center bg-gradient-to-tr from-red-600 to-orange-400 rounded-lg dark:shadow-neutral-700 shadow-lg">
              <div className="grid grid-cols-2 gap-2">
-               <div className="grid-cols-1"><Running className="fill-current text-gray-700 dark:text-gray-200"/></div>
-               <div className="grid-cols-2"><Cloud className="fill-current text-gray-700  dark:text-gray-200 "/></div>
+               <div className="grid-cols-1 opacity-80"><Running className="fill-current text-gray-700 dark:text-gray-200"/></div>
+               <div className="grid-cols-2 opacity-80"><Cloud className="fill-current text-gray-700  dark:text-gray-200 "/></div>
                </div>                      
             </div>
-        <div className="mt-10 bg-white dark:bg-slate-800 rounded-lg px-6 py-8 ring-1 ring-slate-900/5 shadow-xl">
+        <div className="mt-10 bg-white dark:bg-slate-800 dark:shadow-neutral-800 rounded-lg px-6 py-8 ring-1 ring-slate-900/5 shadow-lg">
             <article>
             <div>
                 <header>

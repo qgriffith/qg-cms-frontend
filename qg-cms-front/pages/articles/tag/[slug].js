@@ -27,10 +27,12 @@ export async function getStaticProps({ params }) {
         }
       }
     })
+    const navbar = await queryAPI('/navbars')
     return {
       props: {
         tag: tag.data[0],
-        global: global.data
+        global: global.data,
+        navbar: navbar.data
       },
       revalidate: 500
     }

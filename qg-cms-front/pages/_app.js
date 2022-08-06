@@ -7,6 +7,7 @@ import getStrapiMedia from '../lib/GetStrapiMedia'
 
 function MyApp({ Component, pageProps }) {
   const global = pageProps.global
+  
   return (
     <ThemeProvider attribute="class" defaultTheme="system">
       <Head>

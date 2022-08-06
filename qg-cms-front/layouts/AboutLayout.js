@@ -4,6 +4,7 @@ import ReactMarkdown from "react-markdown"
 import remarkGfm from 'remark-gfm'
 
 export default function AboutLayout({ children }) {
+    console.log(children)
     return(
         <div className="divide-y">
             <div className="space-y-2 pt-6 pb-8 md:space-y-5">
@@ -18,6 +19,7 @@ export default function AboutLayout({ children }) {
                 <div className="text-gray-500 dark:text-gray-400">{children.data.attributes.title}</div>
                 <div className="flex space-x-3 pt-6">
                     <FooterIcons kind="mail" href={`mailto:${children.data.attributes.email}`} size="8" />
+                    <FooterIcons kind="strava" href={children.data.attributes.strava} size="8" />
                 </div>
             </div>
                 <div className="prose max-w-none pt-8 pb-8 dark:prose-dark xl:col-span-2">

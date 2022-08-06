@@ -1,10 +1,9 @@
 import Link from "next/link"
-import NavLinks from "../lib/NavLinks"
 import { useState } from 'react'
 
-const NavBar = () => {
+const NavBar = ({NavLinks}) => {
     const [navShow, setNavShow] = useState(false)
-  
+
     const onToggleNav = () => {
       setNavShow((status) => {
         if (status) {
@@ -58,11 +57,11 @@ const NavBar = () => {
             ></button>
             <nav className="fixed mt-8 h-full">
               {NavLinks.map((link) => (
-                <div key={link.title} className="px-12 py-4">
+                <div key={link.attributes.title} className="px-12 py-4">
                   <Link
-                    href={link.href}
+                    href={link.attributes.href}
                     className="text-2xl font-bold tracking-widest text-gray-900 dark:text-gray-100">
-                    <a onClick={() => {onToggleNav()}}>{link.title}</a>
+                    <a onClick={() => {onToggleNav()}}>{link.attributes.title}</a>
                   </Link>
                 </div>
               ))}

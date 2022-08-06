@@ -19,10 +19,13 @@ export async function getStaticProps() {
         publishedAt: 'desc'
       },
     })
+    const navbar = await queryAPI('/navbars')
+
     return {
         props: {
             posts,
-            global: global.data
+            global: global.data,
+            navbar: navbar.data
         },
         revalidate: 500
     }

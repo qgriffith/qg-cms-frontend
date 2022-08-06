@@ -33,10 +33,12 @@ const Article = ({ post }) => {
         },
       },
     })
+    const navbar = await queryAPI('/navbars')
     return {
       props: {
         post: post.data[0],
-        global: global.data
+        global: global.data,
+        navbar: navbar.data
       },
       revalidate: 500
     }

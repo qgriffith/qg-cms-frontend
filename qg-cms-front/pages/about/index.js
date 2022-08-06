@@ -14,10 +14,12 @@ export async function getStaticProps() {
     const about = await queryAPI('/about', {
         populate: "*"
     })
+    const navbar = await queryAPI('/navbars')
     return {
         props: {
             about,
-            global: global.data
+            global: global.data,
+            navbar: navbar.data
         }
     }
 }

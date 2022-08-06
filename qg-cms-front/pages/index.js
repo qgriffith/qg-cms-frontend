@@ -16,6 +16,8 @@ export async function getStaticProps() {
     populate: "*"
   })
 
+  const navbar = await queryAPI('/navbars')
+
   const posts = await queryAPI('/articles', {
     sort: {
       publishedAt: 'desc'
@@ -29,7 +31,8 @@ export async function getStaticProps() {
       props: {
           home,
           posts,
-          global: global.data
+          global: global.data,
+          navbar: navbar.data
       },
       revalidate: 500
   }

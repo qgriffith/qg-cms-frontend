@@ -1,14 +1,13 @@
 import Link from "next/link"
 import StrapiImage from '../components/StrapiImage'
 import Footer from "../components/Footer"
-import NavBar from "../components/NavBar"
 import SectionContainer from "../components/SectionContainer"
-import NavLinks from "../lib/NavLinks"
 import ThemeSwitch from "../components/ThemeSwitcher"
-
+import NavBar from "../components/NavBar"
 
  const Layout = ({ children }) => {
     global = children.props.global
+    const navlinks = children.props.navbar
     return (
       <SectionContainer>
         <div className="flex h-screen flex-col justify-between">
@@ -17,9 +16,9 @@ import ThemeSwitch from "../components/ThemeSwitcher"
               <Link href="/" aria-label={global.attributes.siteName}>
                 <div className="flex items-center justify-between">
                   <div className="mr-3">
-                    <StrapiImage image={global.attributes.siteLogo.data.attributes} width={75} height={75}/>
+                    <StrapiImage image={global.attributes.siteLogo.data.attributes} width={85} height={85}/>
                   </div>
-                 <div className="hidden h-6 text-2xl font-semibold sm:block">
+                 <div className="hidden h-6 text-3xl font-semibold sm:block">
                       {global.attributes.siteName}
                     </div>
                 </div>
@@ -27,17 +26,16 @@ import ThemeSwitch from "../components/ThemeSwitcher"
             </div>
             <div className="flex items-center text-base leading-5">
               <div className="hidden sm:block">
-                {NavLinks.map((link) => (
+                {navlinks.map((link) => (
                   <Link
-                    key={link.title}
-                    href={link.href}
-                    className="p-1 font-medium text-gray-900 dark:text-gray-100 sm:p-4">
-                    <a className="p-4">{link.title}</a>
+                    key={link.attributes.title}
+                    href={link.attributes.href} className="p-1 font-medium text-gray-900 dark:text-gray-100 sm:p-4">
+                    <a className="p-4 text-xl font-bold tracking-widest text-gray-900 dark:text-gray-100">{link.attributes.title}</a>
                   </Link>
                 ))}
               </div>
               <ThemeSwitch />
-              <NavBar />
+              <NavBar NavLinks={navlinks} />
             </div>
           </header>
           <main className="mb-auto">{children}</main>

@@ -3,7 +3,7 @@ import StrapiImage from '../components/StrapiImage'
 import Footer from "../components/Footer"
 import SectionContainer from "../components/SectionContainer"
 import ThemeSwitch from "../components/ThemeSwitcher"
-import NavBar from "../components/NavBar"
+import MobileNavBar from "../components/MobileNavBar"
 
  const Layout = ({ children }) => {
     global = children.props.global
@@ -35,7 +35,7 @@ import NavBar from "../components/NavBar"
                 ))}
               </div>
               <ThemeSwitch />
-              <NavBar NavLinks={navlinks} />
+              <MobileNavBar NavLinks={navlinks} />
             </div>
           </header>
           <main className="mb-auto">{children}</main>

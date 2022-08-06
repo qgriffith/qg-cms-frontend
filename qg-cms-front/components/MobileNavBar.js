@@ -1,7 +1,7 @@
 import Link from "next/link"
 import { useState } from 'react'
 
-const NavBar = ({NavLinks}) => {
+const MobileNavBar = ({NavLinks}) => {
     const [navShow, setNavShow] = useState(false)
 
     const onToggleNav = () => {
@@ -67,9 +67,9 @@ const NavBar = ({NavLinks}) => {
               ))}
             </nav>
           </div>
-          Hello
+          
         </div>
       )
     }
 
-    export default NavBar
+    export default MobileNavBar

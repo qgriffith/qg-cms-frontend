@@ -4,10 +4,12 @@ import Footer from "../components/Footer"
 import SectionContainer from "../components/SectionContainer"
 import ThemeSwitch from "../components/ThemeSwitcher"
 import MobileNavBar from "../components/MobileNavBar"
+import { useRouter } from "next/router"
 
  const Layout = ({ children }) => {
     global = children.props.global
     const navlinks = children.props.navbar
+    const router = useRouter()
     return (
       <SectionContainer>
         <div className="flex h-screen flex-col justify-between">
@@ -30,7 +32,7 @@ import MobileNavBar from "../components/MobileNavBar"
                   <Link
                     key={link.attributes.title}
                     href={link.attributes.href} className="p-1 font-medium text-gray-900 dark:text-gray-100 sm:p-4">
-                    <a className="p-4 text-xl font-bold tracking-widest text-gray-900 dark:text-gray-100">{link.attributes.title}</a>
+                    <a className={router.pathname == link.attributes.href ? "p-4 text-xl font-bold tracking-widest text-red-400 dark:text-teal-200" : "p-4 text-xl font-bold tracking-widest text-gray-900 dark:text-gray-100"}>{link.attributes.title}</a>
                   </Link>
                 ))}
               </div>

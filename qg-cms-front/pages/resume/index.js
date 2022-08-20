@@ -22,7 +22,8 @@ export async function getStaticProps() {
             resume,
             global: global.data,
             navbar: navbar.data
-        }
+        },
+        revalidate: 500
     }
 }
 

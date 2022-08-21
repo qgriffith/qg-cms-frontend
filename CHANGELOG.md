@@ -4,6 +4,13 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.2.0] - 2022-8-21
+### Added
+- Resume 
+- Location and Phone to footericons
+- New SVG for phone and map
+
+
 ## [1.1.5] - 2022-8-7
 ### Added
 - Change the color of the active link in the navbar

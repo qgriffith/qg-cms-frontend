@@ -2,6 +2,8 @@ import Mail from '../public/icons/mail.svg'
 import Github from '../public/icons//github.svg'
 import Linkedin from '../public/icons/linkedin.svg'
 import Strava from '../public/icons/strava.svg'
+import Phone from '../public/icons/phone.svg'
+import Map from "../public/icons/map.svg"
 
 // Icons taken from: https://simpleicons.org/
 
@@ -10,6 +12,8 @@ const components = {
   github: Github,
   linkedin: Linkedin,
   strava: Strava,
+  phone: Phone,
+  location: Map,
 }
 
 const FooterIcons = ({ kind, href, size = 8 }) => {

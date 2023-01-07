@@ -15,7 +15,7 @@ import { useRouter } from "next/router"
         <div className="flex h-screen flex-col justify-between">
           <header className="flex items-center justify-between py-10">
             <div>
-              <Link href="/" aria-label={global.attributes.siteName}>
+              <Link href="/" aria-label={global.attributes.siteName} legacyBehavior>
                 <div className="flex items-center justify-between">
                   <div className="mr-3">
                     <StrapiImage image={global.attributes.siteLogo.data.attributes} width={85} height={85}/>
@@ -32,7 +32,7 @@ import { useRouter } from "next/router"
                   <Link
                     key={link.attributes.title}
                     href={link.attributes.href} className="p-1 font-medium text-gray-900 dark:text-gray-100 sm:p-4">
-                    <a className={router.pathname == link.attributes.href ? "p-4 text-xl font-bold tracking-widest text-red-400 dark:text-teal-200" : "p-4 text-xl font-bold tracking-widest text-gray-900 dark:text-gray-100"}>{link.attributes.title}</a>
+                    {link.attributes.title}
                   </Link>
                 ))}
               </div>
@@ -44,7 +44,7 @@ import { useRouter } from "next/router"
           <Footer />
         </div>
       </SectionContainer>
-    )
+    );
   }
   
   export default Layout

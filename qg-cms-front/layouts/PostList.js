@@ -5,7 +5,7 @@ const postDateTemplate = { weekday: 'long', year: 'numeric', month: 'long', day:
 
 export default function PostLists({ children, title="All Articles" }) {
 
-    return(
+    return (
         <div className="divide-y">
             <div className="space-y-2 pt-6 pb-8 md:space-y-5">
                 <h3 className="text-md font-bold leading-5 tracking-tight text-gray-900 dark:text-gray-100 sm:text-2xl sm:leading-10 md:text-3xl md:leading-14">
@@ -26,7 +26,7 @@ export default function PostLists({ children, title="All Articles" }) {
                             <div>
                                 <h3 className="text-2xl font-bold leading-8 tracking-tight">
                                     <Link href={`/articles/post/${post.attributes.slug}`} className="text-gray-900 dark:text-gray-100">
-                                        <a>{post.attributes.title}</a>
+                                        {post.attributes.title}
                                     </Link>
                                 </h3>
                                 <div className="flex flex-wrap">
@@ -42,5 +42,5 @@ export default function PostLists({ children, title="All Articles" }) {
             ))}
             </ul>
         </div>
-    )
+    );
 }

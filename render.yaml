@@ -3,8 +3,8 @@ services:
   name: qg-cms-frontend 
   env: node
   plan: starter plus
-  buildCommand: cd qg-cms-front/ && npm install && npm run build
-  startCommand: cd qg-cms-front/ && npm start
+  buildCommand: cd qg-cms-front/ && yarn install && yarn run build
+  startCommand: cd qg-cms-front/ && yarn start
   envVars:
   - key: NODE_ENV
     value: production

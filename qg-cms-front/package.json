@@ -32,5 +32,6 @@
   },
   "author": {
     "name": "Quenten Griffith"
-  }
+  },
+  "packageManager": "yarn@3.3.1"
 }

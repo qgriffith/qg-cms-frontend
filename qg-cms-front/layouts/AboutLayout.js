@@ -4,7 +4,6 @@ import ReactMarkdown from "react-markdown"
 import remarkGfm from 'remark-gfm'
 
 export default function AboutLayout({ children }) {
-    console.log(children)
     return(
         <div className="divide-y">
             <div className="space-y-2 pt-6 pb-8 md:space-y-5">
